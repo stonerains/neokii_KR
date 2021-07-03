@@ -148,7 +148,7 @@ SetupWidget::SetupWidget(QWidget* parent) : QFrame(parent) {
   QVBoxLayout* finishRegistationLayout = new QVBoxLayout(finishRegistration);
   finishRegistationLayout->setMargin(30);
 
-  QLabel* registrationDescription = new QLabel("neokii_086_KOREAN\nThanks to neokii\n  OPENPILOT");
+  QLabel* registrationDescription = new QLabel("086_finn\n  OPENPILOT");
   registrationDescription->setWordWrap(true);
   registrationDescription->setAlignment(Qt::AlignCenter);
   registrationDescription->setStyleSheet(R"(
