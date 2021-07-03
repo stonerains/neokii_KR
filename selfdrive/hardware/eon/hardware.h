@@ -24,7 +24,7 @@ public:
   static void poweroff() { std::system("LD_LIBRARY_PATH= svc power shutdown"); };
   static void set_brightness(int percent) {
      
-    percent = 80;
+    percent = 85;
 	
     std::ofstream brightness_control("/sys/class/leds/lcd-backlight/brightness");
     if (brightness_control.is_open()) {
