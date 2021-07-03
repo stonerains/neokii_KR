@@ -543,72 +543,72 @@ static void bb_ui_draw_measures_right(UIState *s, int bb_x, int bb_y, int bb_w )
   }
 
   // add panda GPS altitude
-  if (UI_FEATURE_RIGHT_GPS_ALTITUDE) {
-    char val_str[16];
-    char uom_str[3];
-    NVGcolor val_color = nvgRGBA(255, 255, 255, 200);
+  //if (UI_FEATURE_RIGHT_GPS_ALTITUDE) {
+    //char val_str[16];
+    //char uom_str[3];
+    //NVGcolor val_color = nvgRGBA(255, 255, 255, 200);
 
-    snprintf(val_str, sizeof(val_str), "%.1f", s->scene.gps_ext.getAltitude());
-    snprintf(uom_str, sizeof(uom_str), "m");
-    bb_h +=bb_ui_draw_measure(s,  val_str, uom_str, "ALTITUDE",
-        bb_rx, bb_ry, bb_uom_dx,
-        val_color, lab_color, uom_color,
-        value_fontSize, label_fontSize, uom_fontSize );
-    bb_ry = bb_y + bb_h;
-  }
+    //snprintf(val_str, sizeof(val_str), "%.1f", s->scene.gps_ext.getAltitude());
+    //snprintf(uom_str, sizeof(uom_str), "m");
+    //bb_h +=bb_ui_draw_measure(s,  val_str, uom_str, "ALTITUDE",
+        //bb_rx, bb_ry, bb_uom_dx,
+        //val_color, lab_color, uom_color,
+        //value_fontSize, label_fontSize, uom_fontSize );
+    //bb_ry = bb_y + bb_h;
+  //}
 
   // add panda GPS accuracy
-  if (UI_FEATURE_RIGHT_GPS_ACCURACY) {
-    char val_str[16];
-    char uom_str[3];
+  //if (UI_FEATURE_RIGHT_GPS_ACCURACY) {
+    //char val_str[16];
+    //char uom_str[3];
 
-    auto gps_ext = s->scene.gps_ext;
-    float verticalAccuracy = gps_ext.getVerticalAccuracy();
-    float gpsAltitude = gps_ext.getAltitude();
-    float gpsAccuracy = gps_ext.getAccuracy();
+    //auto gps_ext = s->scene.gps_ext;
+    //float verticalAccuracy = gps_ext.getVerticalAccuracy();
+    //float gpsAltitude = gps_ext.getAltitude();
+    //float gpsAccuracy = gps_ext.getAccuracy();
 
-    if(verticalAccuracy == 0 || verticalAccuracy > 100)
-        gpsAltitude = 99.99;
+    //if(verticalAccuracy == 0 || verticalAccuracy > 100)
+        //gpsAltitude = 99.99;
 
-    if (gpsAccuracy > 100)
-      gpsAccuracy = 99.99;
-    else if (gpsAccuracy == 0)
-      gpsAccuracy = 99.8;
+    //if (gpsAccuracy > 100)
+      //gpsAccuracy = 99.99;
+    //else if (gpsAccuracy == 0)
+      //gpsAccuracy = 99.8;
 
-    NVGcolor val_color = nvgRGBA(255, 255, 255, 200);
-    if(gpsAccuracy > 1.0) {
-         val_color = nvgRGBA(255, 188, 3, 200);
-      }
-      if(gpsAccuracy > 2.0) {
-         val_color = nvgRGBA(255, 80, 80, 200);
-      }
+    //NVGcolor val_color = nvgRGBA(255, 255, 255, 200);
+    //if(gpsAccuracy > 1.0) {
+         //val_color = nvgRGBA(255, 188, 3, 200);
+      //}
+      //if(gpsAccuracy > 2.0) {
+         //val_color = nvgRGBA(255, 80, 80, 200);
+      //}
 
-    snprintf(val_str, sizeof(val_str), "%.2f", gpsAccuracy);
-    snprintf(uom_str, sizeof(uom_str), "m");
-    bb_h +=bb_ui_draw_measure(s,  val_str, uom_str, "GPS PREC",
-        bb_rx, bb_ry, bb_uom_dx,
-        val_color, lab_color, uom_color,
-        value_fontSize, label_fontSize, uom_fontSize );
-    bb_ry = bb_y + bb_h;
-  }
+    //snprintf(val_str, sizeof(val_str), "%.2f", gpsAccuracy);
+    //snprintf(uom_str, sizeof(uom_str), "m");
+    //bb_h +=bb_ui_draw_measure(s,  val_str, uom_str, "GPS PREC",
+        //bb_rx, bb_ry, bb_uom_dx,
+        //val_color, lab_color, uom_color,
+        //value_fontSize, label_fontSize, uom_fontSize );
+    //bb_ry = bb_y + bb_h;
+  //}
 
   // add panda GPS satellite
-  if (UI_FEATURE_RIGHT_GPS_SATELLITE) {
-    char val_str[16];
-    char uom_str[3];
-    NVGcolor val_color = nvgRGBA(255, 255, 255, 200);
+  //if (UI_FEATURE_RIGHT_GPS_SATELLITE) {
+    //char val_str[16];
+    //char uom_str[3];
+    //NVGcolor val_color = nvgRGBA(255, 255, 255, 200);
 
-    if(s->scene.satelliteCount < 6)
-         val_color = nvgRGBA(255, 80, 80, 200);
+    //if(s->scene.satelliteCount < 6)
+         //val_color = nvgRGBA(255, 80, 80, 200);
 
-    snprintf(val_str, sizeof(val_str), "%d", s->scene.satelliteCount > 0 ? s->scene.satelliteCount : 0);
-    snprintf(uom_str, sizeof(uom_str), "");
-    bb_h +=bb_ui_draw_measure(s,  val_str, uom_str, "SATELLITE",
-        bb_rx, bb_ry, bb_uom_dx,
-        val_color, lab_color, uom_color,
-        value_fontSize, label_fontSize, uom_fontSize );
-    bb_ry = bb_y + bb_h;
-  }
+    //snprintf(val_str, sizeof(val_str), "%d", s->scene.satelliteCount > 0 ? s->scene.satelliteCount : 0);
+    //snprintf(uom_str, sizeof(uom_str), "");
+    //bb_h +=bb_ui_draw_measure(s,  val_str, uom_str, "SATELLITE",
+        //bb_rx, bb_ry, bb_uom_dx,
+        //val_color, lab_color, uom_color,
+        //value_fontSize, label_fontSize, uom_fontSize );
+    //bb_ry = bb_y + bb_h;
+  //}
 
   //finally draw the frame
   bb_h += 40;
@@ -869,7 +869,7 @@ static void ui_draw_vision_maxspeed(UIState *s) {
     else
         snprintf(str, sizeof(str), "%d", (int)(cruiseRealMaxSpeed*0.621371 + 0.5));
 
-    ui_draw_text(s, text_x, 192+bdr_s, str, 48 * 2.5, COLOR_WHITE, "sans-bold");
+    ui_draw_text(s, text_x, 205+bdr_s, str, 72 * 2.5, COLOR_WHITE, "sans-bold");
   }
   else
   {
