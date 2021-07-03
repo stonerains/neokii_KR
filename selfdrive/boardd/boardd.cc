@@ -574,8 +574,8 @@ int main() {
 
 	  printf("panda->is_pigeon: %d !!!!!\n", (int)(panda->is_pigeon));
 
-	  if(panda->is_pigeon)
-	      threads.push_back(std::thread(pigeon_thread));
+	  //if(panda->is_pigeon)
+	      //threads.push_back(std::thread(pigeon_thread));
     }
 
     for (auto &t : threads) t.join();
