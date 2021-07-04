@@ -203,5 +203,5 @@ void OffroadHome::refresh() {
   }
   alert_notification->setVisible(true);
   // Red background for alerts, blue for update available
-  alert_notification->setStyleSheet(alerts_widget->updateAvailable ? "background-color: #E22C2C" : "background-color: #E22C2C");
+  alert_notification->setStyleSheet(alerts_widget->updateAvailable ? "background-color: #364DEF" : "background-color: #E22C2C");
 }
