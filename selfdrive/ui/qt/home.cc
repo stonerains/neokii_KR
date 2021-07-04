@@ -195,7 +195,7 @@ void OffroadHome::refresh() {
     alert_notification->setText("업데이트");
   } else {
     int alerts = alerts_widget->alertCount;
-    alert_notification->setText(QString::number(alerts) + " 경고" + (alerts == 1 ? "" : "S"));
+    alert_notification->setText(QString::number(alerts) + " alert" + (alerts == 1 ? "" : "S"));
   }
 
   if (!alert_notification->isVisible() && !first_refresh) {
